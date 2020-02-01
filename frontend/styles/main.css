@@ -41,15 +41,3 @@
         width: 300px;
     }
 }
-
-@media only screen and (max-width: 500px) {
-    .receipt_div {
-        display: flex;
-    }
-}
-
-@media only screen and (max-width: 400px) {
-    .receipt_div {
-        display: none;
-    }
-}

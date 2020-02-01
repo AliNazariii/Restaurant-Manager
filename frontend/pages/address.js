@@ -4,6 +4,7 @@ import "../styles/index.css"
 import "../styles/address.css"
 import Head from 'next/head'
 import Bar from "../components/bar"
+import Menu from "../components/menu"
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 
@@ -176,6 +177,7 @@ function Address(props) {
                 <div className="right-side">
                     <Bar />
                 </div>
+                <Menu />
             </div>
         </div>
     )

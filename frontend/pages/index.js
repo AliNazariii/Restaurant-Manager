@@ -3,7 +3,6 @@ import "antd/dist/antd.css"
 import "../styles/index.css"
 import "../styles/main.css"
 import Head from 'next/head'
-
 import Bar from "../components/bar"
 
 function Home() {
