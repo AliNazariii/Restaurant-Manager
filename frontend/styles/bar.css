@@ -4,13 +4,20 @@
 }
 
 .bar_buttons {
+    border: dotted;
+    border-color: #ffffff;
+    text-align: center;
+}
+
+.bar_button {
     width: 220px;
     margin: 10px;
     border-radius: 10px;
 }
 
 .receipt_div {
-    display: flex;
+    text-align: center;
+    margin-left: 70px; 
 }
 .receipt_button {
     margin-top: 10px;
