@@ -9,8 +9,8 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 
 function Customer(props) {
-    const host = `http://localhost:4000`
-    // const host = 'http://37.152.176.66:4000'
+    // const host = `http://localhost:4000`
+    const host = 'http://37.152.176.66:4000'
     const [customers, setCustomers] = useState([])
     const [isVisible, setVisible] = useState(false)
     const [confirmLoading, setConfirmLoading] = useState(false)
