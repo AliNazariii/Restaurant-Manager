@@ -5,7 +5,7 @@ const cors = require('cors');
 
 app.use(express.json());
 app.use(cors({
-    origin: 'http://localhost:3030',
+    origin: 'http://localhost:3000',
     credentials: true
 }));
 app.use(`/address`, require('./routers/address'));
