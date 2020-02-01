@@ -23,7 +23,6 @@ function Address(props) {
     }, []);
 
     const fetchData = async () => {
-        console.log(host)
         await axios.get(host + `/address`)
             .then(res => {
                 setAddresses(res.data);
