@@ -9,10 +9,12 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 
 function Log() {
+    const host = `http://localhost:4000`
+    // const host = 'http://37.152.176.66:4000'
     const [logs, setLogs] = useState([]);
     useEffect(() => {
         const fetchData = async () => {
-            await axios.get(`http://localhost:4000/log`)
+            await axios.get(host + `/log`)
                 .then(res => {
                     setLogs(res.data);
                 })

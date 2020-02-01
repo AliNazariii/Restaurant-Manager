@@ -9,6 +9,8 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 
 function Delivery(props) {
+    const host = `http://localhost:4000`
+    // const host = 'http://37.152.176.66:4000'
     const [deliveries, setDeliveries] = useState([])
     const [isVisible, setVisible] = useState(false)
     const [confirmLoading, setConfirmLoading] = useState(false)
@@ -19,7 +21,7 @@ function Delivery(props) {
     }, []);
 
     const fetchData = async () => {
-        await axios.get(`http://localhost:4000/delivery`)
+        await axios.get(host + `/delivery`)
             .then(res => {
                 setDeliveries(res.data);
                 setOnce(true)
@@ -44,7 +46,7 @@ function Delivery(props) {
     useEffect(() => {
         if (once === true) {
             axios({
-                url : "http://localhost:4000/delivery/add",
+                url : host + "/delivery/add",
                 method : 'POST',
                 data : newDelivery,
                 headers : {
@@ -142,7 +144,7 @@ function Delivery(props) {
                                 <List.Item
                                     actions={[<Button type="link" onClick={() => {
                                                     axios({
-                                                        url : "http://localhost:4000/delivery/delete",
+                                                        url : host + "/delivery/delete",
                                                         method : 'POST',
                                                         data : item,
                                                         headers : {

@@ -9,6 +9,8 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 
 function FoodReceipt(props) {
+    const host = `http://localhost:4000`
+    // const host = 'http://37.152.176.66:4000'
     const [receipts, setReceipts] = useState([]);
     const [customers, setCustomers] = useState([])
     const [addresses, setAddresses] = useState([])
@@ -26,24 +28,24 @@ function FoodReceipt(props) {
     }, []);
 
     const fetchData = async () => {
-        await axios.get(`http://localhost:4000/food_receipt`)
+        await axios.get(host + `/food_receipt`)
             .then(res => {
                 setReceipts(res.data);
                 setOnce(true)
             })
-        await axios.get(`http://localhost:4000/address`)
+        await axios.get(host + `/address`)
             .then(res => {
                 setAddresses(res.data);
             })
-        await axios.get(`http://localhost:4000/customer`)
+        await axios.get(host + `/customer`)
             .then(res => {
                 setCustomers(res.data);
             })
-        await axios.get(`http://localhost:4000/delivery`)
+        await axios.get(host + `/delivery`)
             .then(res => {
                 setDeliveries(res.data);
             })
-        await axios.get(`http://localhost:4000/food`)
+        await axios.get(host + `/food`)
             .then(res => {
                 setFoods(res.data);
             })
@@ -67,7 +69,7 @@ function FoodReceipt(props) {
     useEffect(() => {
         if (once === true) {
             axios({
-                url : "http://localhost:4000/food_receipt/add",
+                url : host + "/food_receipt/add",
                 method : 'POST',
                 data : newReceipt,
                 headers : {
@@ -166,7 +168,7 @@ function FoodReceipt(props) {
                                 <List.Item
                                     actions={[<Button type="link" onClick={() => {
                                                     axios({
-                                                        url : "http://localhost:4000/food_receipt/delete",
+                                                        url : host + "/food_receipt/delete",
                                                         method : 'POST',
                                                         data : item,
                                                         headers : {

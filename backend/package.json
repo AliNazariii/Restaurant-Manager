@@ -9,10 +9,12 @@
     "mysql": "^2.18.0"
   },
   "devDependencies": {
-    "eslint": "^6.8.0"
+    "eslint": "^6.8.0",
+    "env-cmd": "^10.0.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "env-cmd -f ../.env node ./src/index.js"
   },
   "author": "Ali Nazari",
   "license": "ISC"

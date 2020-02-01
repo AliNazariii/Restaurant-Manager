@@ -9,6 +9,8 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 
 function Customer(props) {
+    const host = `http://localhost:4000`
+    // const host = 'http://37.152.176.66:4000'
     const [customers, setCustomers] = useState([])
     const [isVisible, setVisible] = useState(false)
     const [confirmLoading, setConfirmLoading] = useState(false)
@@ -19,7 +21,7 @@ function Customer(props) {
     }, []);
 
     const fetchData = async () => {
-        await axios.get(`http://localhost:4000/customer`)
+        await axios.get(host + `/customer`)
             .then(res => {
                 setCustomers(res.data);
                 setOnce(true)
@@ -44,7 +46,7 @@ function Customer(props) {
     useEffect(() => {
         if (once === true) {
             axios({
-                url : "http://localhost:4000/customer/add",
+                url : host + "/customer/add",
                 method : 'POST',
                 data : newCustomer,
                 headers : {
@@ -142,7 +144,7 @@ function Customer(props) {
                                 <List.Item
                                     actions={[<Button type="link" onClick={() => {
                                                     axios({
-                                                        url : "http://localhost:4000/customer/delete",
+                                                        url : host + "/customer/delete",
                                                         method : 'POST',
                                                         data : item,
                                                         headers : {

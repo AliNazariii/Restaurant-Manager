@@ -9,6 +9,8 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 
 function MaterialReceipt(props) {
+    const host = `http://localhost:4000`
+    // const host = 'http://37.152.176.66:4000'
     const [receipts, setReceipts] = useState([]);
     const [markets, setMarkets] = useState([])
     const [materials, setMaterials] = useState([])
@@ -24,17 +26,17 @@ function MaterialReceipt(props) {
     }, []);
 
     const fetchData = async () => {
-        await axios.get(`http://localhost:4000/material_receipt`)
+        await axios.get(host + `/material_receipt`)
             .then(res => {
                 setReceipts(res.data);
                 setOnce(true)
             })
-        await axios.get(`http://localhost:4000/market/active`)
+        await axios.get(host + `/market/active`)
             .then(res => {
                 setMarkets(res.data);
                 setOnce(true)
             })
-        await axios.get(`http://localhost:4000/material`)
+        await axios.get(host + `/material`)
             .then(res => {
                 setMaterials(res.data);
                 setOnce(true)
@@ -59,7 +61,7 @@ function MaterialReceipt(props) {
     useEffect(() => {
         if (once === true) {
             axios({
-                url : "http://localhost:4000/material_receipt/add",
+                url : host + "/material_receipt/add",
                 method : 'POST',
                 data : newReceipt,
                 headers : {
@@ -142,7 +144,7 @@ function MaterialReceipt(props) {
                                 <List.Item
                                     actions={[<Button type="link" onClick={() => {
                                                     axios({
-                                                        url : "http://localhost:4000/material_receipt/delete",
+                                                        url : host + "/material_receipt/delete",
                                                         method : 'POST',
                                                         data : item,
                                                         headers : {

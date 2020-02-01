@@ -9,6 +9,8 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 
 function Address(props) {
+    const host = `http://localhost:4000`
+    // const host = 'http://37.152.176.66:4000'
     const [addresses, setAddresses] = useState([]);
     const [customers, setCustomers] = useState([])
     const [isVisible, setVisible] = useState(false)
@@ -21,12 +23,13 @@ function Address(props) {
     }, []);
 
     const fetchData = async () => {
-        await axios.get(`http://localhost:4000/address`)
+        console.log(host)
+        await axios.get(host + `/address`)
             .then(res => {
                 setAddresses(res.data);
                 setOnce(true)
             })
-        await axios.get(`http://localhost:4000/customer`)
+        await axios.get(host + `/customer`)
             .then(res => {
                 setCustomers(res.data);
             })
@@ -50,7 +53,7 @@ function Address(props) {
     useEffect(() => {
         if (once === true) {
             axios({
-                url : "http://localhost:4000/address/add",
+                url : host + "/address/add",
                 method : 'POST',
                 data : newAddress,
                 headers : {
@@ -150,7 +153,7 @@ function Address(props) {
                                 <List.Item
                                     actions={[<Button type="link" onClick={() => {
                                                     axios({
-                                                        url : "http://localhost:4000/address/delete",
+                                                        url : host + "/address/delete",
                                                         method : 'POST',
                                                         data : item,
                                                         headers : {

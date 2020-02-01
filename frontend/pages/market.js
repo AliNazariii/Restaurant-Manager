@@ -9,6 +9,8 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 
 function Market(props) {
+    const host = `http://localhost:4000`
+    // const host = 'http://37.152.176.66:4000'
     const [markets, setMarkets] = useState([])
     const [isVisible, setVisible] = useState(false)
     const [confirmLoading, setConfirmLoading] = useState(false)
@@ -20,7 +22,7 @@ function Market(props) {
     }, []);
 
     const fetchData = async () => {
-        await axios.get(`http://localhost:4000/market`)
+        await axios.get(host + `/market`)
             .then(res => {
                 setMarkets(res.data);
                 setOnce(true)
@@ -45,7 +47,7 @@ function Market(props) {
     useEffect(() => {
         if (once === true) {
             axios({
-                url : "http://localhost:4000/market/add",
+                url : host + "/market/add",
                 method : 'POST',
                 data : newMarket,
                 headers : {
@@ -126,7 +128,7 @@ function Market(props) {
                                 <List.Item
                                     actions={[<Button type="link" onClick={() => {
                                                     axios({
-                                                        url : "http://localhost:4000/market/delete",
+                                                        url : host + "/market/delete",
                                                         method : 'POST',
                                                         data : item,
                                                         headers : {

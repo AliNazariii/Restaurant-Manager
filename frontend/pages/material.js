@@ -9,6 +9,8 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 
 function Material(props) {
+    const host = `http://localhost:4000`
+    // const host = 'http://37.152.176.66:4000'
     const [materials, setMaterials] = useState([])
     const [isVisible, setVisible] = useState(false)
     const [confirmLoading, setConfirmLoading] = useState(false)
@@ -19,7 +21,7 @@ function Material(props) {
     }, []);
 
     const fetchData = async () => {
-        await axios.get(`http://localhost:4000/material`)
+        await axios.get(host + `/material`)
             .then(res => {
                 setMaterials(res.data);
                 setOnce(true)
@@ -44,7 +46,7 @@ function Material(props) {
     useEffect(() => {
         if (once === true) {
             axios({
-                url : "http://localhost:4000/material/add",
+                url : host + "/material/add",
                 method : 'POST',
                 data : newMaterial,
                 headers : {
@@ -124,7 +126,7 @@ function Material(props) {
                                 <List.Item
                                     actions={[<Button type="link" onClick={() => {
                                                     axios({
-                                                        url : "http://localhost:4000/material/delete",
+                                                        url : host + "/material/delete",
                                                         method : 'POST',
                                                         data : item,
                                                         headers : {

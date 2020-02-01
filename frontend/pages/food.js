@@ -9,6 +9,8 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 
 function Food(props) {
+    const host = `http://localhost:4000`
+    // const host = 'http://37.152.176.66:4000'
     const [foods, setFoods] = useState([])
     const [isVisible, setVisible] = useState(false)
     const [confirmLoading, setConfirmLoading] = useState(false)
@@ -19,7 +21,7 @@ function Food(props) {
     }, []);
 
     const fetchData = async () => {
-        await axios.get(`http://localhost:4000/food`)
+        await axios.get(host + `/food`)
             .then(res => {
                 setFoods(res.data);
                 setOnce(true)
@@ -44,7 +46,7 @@ function Food(props) {
     useEffect(() => {
         if (once === true) {
             axios({
-                url : "http://localhost:4000/food/add",
+                url : host + "/food/add",
                 method : 'POST',
                 data : newFood,
                 headers : {
@@ -124,7 +126,7 @@ function Food(props) {
                                 <List.Item
                                     actions={[<Button type="link" onClick={() => {
                                                     axios({
-                                                        url : "http://localhost:4000/food/delete",
+                                                        url : host + "/food/delete",
                                                         method : 'POST',
                                                         data : item,
                                                         headers : {

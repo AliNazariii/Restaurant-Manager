@@ -3,9 +3,10 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 
+
 app.use(express.json());
 app.use(cors({
-    origin: 'http://localhost:3000',
+    origin: process.env.origin_cors_local,
     credentials: true
 }));
 app.use(`/address`, require('./routers/address'));
@@ -17,7 +18,5 @@ app.use(`/market`, require('./routers/market'));
 app.use(`/food_receipt`, require('./routers/food_receipt'));
 app.use(`/material_receipt`, require('./routers/material_receipt'));
 app.use(`/log`, require('./routers/log'));
-
-// app.use(`${baseURL}/uploads`, express.static(path.join(__dirname, '../../uploads')))
 
 module.exports = app;
