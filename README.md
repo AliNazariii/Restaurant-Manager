@@ -3,8 +3,8 @@
 ![1.png](1.png)
 
 Sitadu is a simple desktop web application as a restaurant manager implemented with a mysql database, NodeJS backend and ReactJS frontend.
-I have done this project to learn mysql better. 
-I had a few frontend skills and no backend skills at that time :D
+<br/>I have done this project to learn mysql better. 
+<br/>I had a few frontend skills and no backend skills at that time :D
 
 ![2.png](2.png)
 
