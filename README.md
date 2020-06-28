@@ -5,6 +5,9 @@ Sitadu is a simple desktop web application as a restaurant manager implemented w
 ![1.png](1.png)
 
 I have done this project to learn mysql better. 
+
+![diagram.png](diagram.png)
+
 <br/>I had a few frontend skills and no backend skills at that time :D
 
 ![2.png](2.png)
