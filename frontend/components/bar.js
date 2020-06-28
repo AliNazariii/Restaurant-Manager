@@ -8,35 +8,29 @@ function Bar() {
             <Menu.Item key="0">
                 <a href="./food_receipt">Food Orders</a>
             </Menu.Item>
-            <Menu.Item key="0">
-                <a>Food Orders Report</a>
-            </Menu.Item>
-            <Menu.Item key="0">
+            <Menu.Item key="1">
                 <a href="./address">Addresses</a>
             </Menu.Item>
-            <Menu.Item key="0">
+            <Menu.Item key="2">
                 <a href="./customer">Customers</a>
             </Menu.Item>
-            <Menu.Item key="0">
+            <Menu.Item key="3">
                 <a href="./delivery">Deliveries</a>
             </Menu.Item>
-            <Menu.Item key="0">
+            <Menu.Item key="4">
                 <a href="./food">Foods</a>
             </Menu.Item>
-            <Menu.Item key="0">
+            <Menu.Item key="5">
                 <a href="./market">Markets</a>
             </Menu.Item>
-            <Menu.Item key="0">
+            <Menu.Item key="6">
                 <a href="./material">Materials</a>
             </Menu.Item>
-            <Menu.Item key="0">
+            <Menu.Item key="7">
                 <a href="./log">Logs</a>
             </Menu.Item>
-            <Menu.Item key="0">
+            <Menu.Item key="8">
                 <a href="./material_receipt">Material Orders</a>
-            </Menu.Item>
-            <Menu.Item key="0">
-                <a>Material Orders Report</a>
             </Menu.Item>
         </Menu>
     )
@@ -45,9 +39,6 @@ function Bar() {
             <div className="bar_buttons">
                 <Button type="danger" className="bar_button" href="./food_receipt">
                     Food Orders
-                </Button>
-                <Button type="primary" className="bar_button report_button">
-                    Food Orders Report
                 </Button>
                 <Button type="danger" className="bar_button" href="./address">
                     Addresses
@@ -77,9 +68,6 @@ function Bar() {
 
                 <Button type="danger" className="bar_button" href="./material_receipt">
                     Material Orders
-                </Button>
-                <Button type="primary" className="bar_button report_button">
-                    Material Orders Report
                 </Button>
             </div>
             {/* <div>

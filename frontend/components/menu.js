@@ -9,9 +9,6 @@ function MyMenu() {
                 <a href="./food_receipt">Food Orders</a>
             </Menu.Item>
             <Menu.Item key="0">
-                <a>Food Orders Report</a>
-            </Menu.Item>
-            <Menu.Item key="0">
                 <a href="./address">Addresses</a>
             </Menu.Item>
             <Menu.Item key="0">
@@ -34,9 +31,6 @@ function MyMenu() {
             </Menu.Item>
             <Menu.Item key="0">
                 <a href="./material_receipt">Material Orders</a>
-            </Menu.Item>
-            <Menu.Item key="0">
-                <a>Material Orders Report</a>
             </Menu.Item>
         </Menu>
     )

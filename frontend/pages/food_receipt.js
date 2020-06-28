@@ -9,8 +9,8 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 
 function FoodReceipt(props) {
-    // const host = `http://localhost:4000`
-    const host = 'http://37.152.176.66:4000'
+    const host = `http://localhost:4000`
+    // const host = 'http://37.152.176.66:4000'
     const [receipts, setReceipts] = useState([]);
     const [customers, setCustomers] = useState([])
     const [addresses, setAddresses] = useState([])
