@@ -6,7 +6,7 @@ const cors = require('cors');
 
 app.use(express.json());
 app.use(cors({
-    origin: process.env.origin_cors_server,
+    origin: process.env.origin_cors_local,
     credentials: true
 }));
 app.use(`/address`, require('./routers/address'));
